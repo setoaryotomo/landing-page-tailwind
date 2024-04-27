@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>IndoVolunteer</title>
+  <link rel="icon" href="favicon.png"><link href="tailwind.css" rel="stylesheet"></head>
+
+  <body
+    x-data="
+      {
+        scrolledFromTop: false
+      }
+    "
+    x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"
+    @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"
+  >
+    <!-- ====== Navbar Section Start -->
+    <header
+      x-data="
+        {
+          navbarOpen: false,
+        }
+      "
+      :class="scrolledFromTop ? 'fixed z-50 bg-white bg-opacity-80 dark:bg-dark shadow-sm backdrop-blur-sm' : 'absolute' "
+      class="left-0 top-0 z-50 w-full"
+    >
+      <div class="container mx-auto">
+        <div class="relative z-40 -mx-4 flex items-center justify-between">
+          <div class="w-60 max-w-full px-4">
+            <a href="javascript:void(0)" class="block w-full py-5 dark:text-dark-6 text-xl font-15 text-body-color hover:text-dark dark:hover:text-white">
+              IndoVolunteer
+            </a>
+            
+          </div>
+          <div class="flex w-full items-center justify-between px-4">
+            <div>
+              <button
+                @click="navbarOpen = !navbarOpen"
+                :class="navbarOpen && 'navbarTogglerActive'"
+                id="navbarToggler"
+                class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
+              >
+                <span
+                  class="relative my-[6px] block h-[2px] w-[30px] bg-body-color"
+                ></span>
+                <span
+                  class="relative my-[6px] block h-[2px] w-[30px] bg-body-color"
+                ></span>
+                <span
+                  class="relative my-[6px] block h-[2px] w-[30px] bg-body-color"
+                ></span>
+              </button>
+              <nav
+                :class="!navbarOpen && 'hidden' "
+                id="navbarCollapse"
+                class="dark:bg-dark-2 absolute right-4 top-full z-40 w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:shadow-none lg:dark:bg-transparent"
+              >
+                <ul class="blcok lg:flex">
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="dark:text-dark-6 flex py-2 text-base font-medium text-body-color hover:text-dark dark:hover:text-white lg:ml-12 lg:inline-flex"
+                    >
+                      Tentang Kami
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="dark:text-dark-6 flex py-2 text-base font-medium text-body-color hover:text-dark dark:hover:text-white lg:ml-12 lg:inline-flex"
+                    >
+                      Cara Kerja
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="dark:text-dark-6 flex py-2 text-base font-medium text-body-color hover:text-dark dark:hover:text-white lg:ml-12 lg:inline-flex"
+                    >
+                      Aktivitas
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="dark:text-dark-6 flex py-2 text-base font-medium text-body-color hover:text-dark dark:hover:text-white lg:ml-12 lg:inline-flex"
+                    >
+                      Support
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
+              <a
+                href="javascript:void(0)"
+                class="rounded-md bg-primary px-7 py-3 text-base font-medium text-white hover:bg-body-color"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ====== Navbar Section End -->
+
+    <!-- ====== Hero Section Start -->
+    <div class="relative pb-[110px] pt-[150px] dark:bg-dark lg:pt-[170px]">
+      <div class="container mx-auto">
+        <div class="-mx-4 flex flex-wrap items-center">
+          <div class="w-full px-4 lg:w-1/2">
+            <div class="mb-12 lg:mb-0">
+              <h2
+                class="mb-5 text-3xl font-bold leading-[1.208] text-dark dark:text-white lg:text-[38px] xl:text-[40px]"
+              >
+              Ambil Peran Jadi Relawan,
+              Ubah niat baik jadi aksi baik hari ini
+              </h2>
+              
+              <p
+                class="dark:text-dark-6 mb-8 max-w-[485px] text-base text-body-color"
+              >
+              Lebih banyak relawan, lebih besar dampaknya. Ada beragam pilihan aktivitas yang dapat diikuti untuk membuat perubahan besar
+              </p>
+
+            </div>
+          </div>
+
+          <div class="w-full px-4 lg:w-1/2">
+            <div class="-mx-2 flex flex-wrap sm:-mx-4">
+              <div class="w-1/2 px-2 sm:px-4">
+                <div
+                  class="mb-4 h-[256px] sm:mb-8 sm:h-[442px] lg:h-[332px] xl:h-[442px]"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="hero image"
+                    class="h-full w-full object-cover object-center"
+                  />
+                </div>
+              </div>
+              <div class="w-1/2 px-2 sm:px-4">
+                <div
+                  class="mb-4 h-[120px] sm:mb-8 sm:h-[205px] lg:h-[150px] xl:h-[205px]"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="hero image"
+                    class="h-full w-full object-cover object-center"
+                  />
+                </div>
+                <div
+                  class="mb-4 h-[120px] sm:mb-8 sm:h-[205px] lg:h-[150px] xl:h-[205px]"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1628717341663-0007b0ee2597?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="hero image"
+                    class="h-full w-full object-cover object-center"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ====== Hero Section End -->
+
+    <!-- ====== Description Section Start -->
+    <section class="dark:bg-dark-2 bg-tg-bg py-20 text-center">
+      <h2
+      class="mb-2.5 text-3xl font-bold leading-snug md:text-[40px]"
+      >
+      <span class="pr-0.5">Tentang Kami</span>
+      </h2>
+      <p class="mb-6 text-base leading-relaxed px-7">
+        IndoVolunteer adalah organisasi nirlaba berbasis online yang mempertemukan organisasi sosial yang membutuhkan relawan dengan siapapun yang ingin menjadi relawan.
+Mimpi besar kami adalah melihat kegiatan menjadi relawan sebagai gaya hidup. Di mana relawan bukan lagi kegiatan sosial yang eksklusif tapi sudah menjadi kebiasaan masyarakat Indonesia.
+Misi utama kami yakni ingin membuat kolaborasi antara relawan dengan organisasi/komunitas dengan misi sosial menjadi lebih mudah melalui platform IndoVolunteer.
+      </p>
+    </section>
+    <!-- ====== Description Section End -->
+
+    <!-- ====== About Section Start -->
+    <section
+      class="overflow-hidden pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]"
+    >
+      <div class="container mx-auto">
+        <div class="-mx-4 flex flex-wrap items-center justify-between">
+          <div class="w-full px-4 lg:w-6/12">
+            <div class="relative mb-12 lg:mb-0">
+              <div
+                class="mx-auto max-w-[430px] rounded-tl-[50px] sm:rounded-tl-[70px]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1605714007165-c15eac9c647b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="about image"
+                  class="w-full rounded-tl-[50px] sm:rounded-tl-[70px]"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 right-0 z-10 max-w-[320px] overflow-hidden rounded-tr-[50px] bg-primary px-6 py-10 text-xl font-bold text-white sm:px-10 sm:text-2xl"
+              >
+                Mulai aktivitas kerelawanan anda !
+              </div>
+            </div>
+          </div>
+          <div class="w-full px-4 lg:w-1/2 2xl:w-5/12">
+            <div class="mt-10 lg:mt-0">
+              <h2
+                class="mb-11 text-3xl font-bold leading-tight text-dark dark:text-white sm:text-4xl sm:leading-tight md:text-5xl lg:text-4xl lg:leading-tight xl:text-5xl"
+              >
+                Bagaimana Cara Kerja <i>IndoVolunteer?</i>
+              </h2>
+
+              <div class="mb-8 flex">
+                <span
+                  class="w-full max-w-[45px] pr-4 text-2xl font-bold text-primary"
+                >
+                  01
+                </span>
+                <div class="w-full">
+                  <h3
+                    class="mb-4 text-xl font-bold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+                  >
+                    Daftarkan Diri
+                  </h3>
+                  <p class="dark:text-dark-6 mb-9 text-base text-body-color">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse at minus neque minima sapiente ipsum odit accusantium molestiae consequuntur alias.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex">
+                <span
+                  class="w-full max-w-[45px] pr-4 text-2xl font-bold text-primary"
+                >
+                  02
+                </span>
+                <div class="w-full">
+                  <h3
+                    class="mb-4 text-xl font-bold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+                  >
+                    Laksanakan Tugas
+                  </h3>
+                  <p class="dark:text-dark-6 mb-9 text-base text-body-color">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam atque harum soluta sequi modi distinctio repudiandae? Quidem earum quo sint?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== About Section End -->
+
+
+    <!-- ====== Call To Action Section Start -->
+    <section
+      class="relative z-10 overflow-hidden bg-primary py-20 lg:py-[110px]"
+    >
+      <div class="container mx-auto">
+        <div class="relative overflow-hidden">
+          <div class="-mx-4 flex flex-wrap items-stretch">
+            <div class="w-full px-4">
+              <div class="mx-auto max-w-[570px] text-center">
+                <h2
+                  class="mb-2.5 text-3xl font-bold leading-snug text-white md:text-[40px]"
+                >
+                  <span class="pr-0.5">What Are You Looking For?</span>
+                  <span class="font-normal"> Get Started Now </span>
+                </h2>
+                <p class="mb-6 text-base leading-relaxed text-white md:pr-10">
+                  Baru memulai untuk jadi relawan? Pelajari selengkapnya dan mulai cari aktivitas kerelawanan pertama anda
+                </p>
+                <a
+                  href="javascript:void(0)"
+                  class="inline-block rounded-md border border-transparent bg-secondary px-7 py-3 text-base font-medium text-white transition hover:bg-opacity-90"
+                >
+                  Explore Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="absolute left-0 top-0">
+          <svg
+            width="495"
+            height="470"
+            viewBox="0 0 495 470"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="55"
+              cy="442"
+              r="138"
+              stroke="white"
+              stroke-opacity="0.04"
+              stroke-width="50"
+            />
+            <circle
+              cx="446"
+              r="39"
+              stroke="white"
+              stroke-opacity="0.04"
+              stroke-width="20"
+            />
+            <path
+              d="M245.406 137.609L233.985 94.9852L276.609 106.406L245.406 137.609Z"
+              stroke="white"
+              stroke-opacity="0.08"
+              stroke-width="12"
+            />
+          </svg>
+        </span>
+        <span class="absolute bottom-0 right-0">
+          <svg
+            width="493"
+            height="470"
+            viewBox="0 0 493 470"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="462"
+              cy="5"
+              r="138"
+              stroke="white"
+              stroke-opacity="0.04"
+              stroke-width="50"
+            />
+            <circle
+              cx="49"
+              cy="470"
+              r="39"
+              stroke="white"
+              stroke-opacity="0.04"
+              stroke-width="20"
+            />
+            <path
+              d="M222.393 226.701L272.808 213.192L259.299 263.607L222.393 226.701Z"
+              stroke="white"
+              stroke-opacity="0.06"
+              stroke-width="13"
+            />
+          </svg>
+        </span>
+      </div>
+    </section>
+    <!-- ====== Call To Action Section End -->
+
+    <!-- ====== Form Section Start -->
+    <section class="overflow-hidden py-24 dark:bg-dark">
+      <div class="container mx-auto">
+        <h2 class="mb-2.5 text-3xl font-bold leading-snug md:text-[40px] text-center">Form Pendaftaran Relawan</h2>
+        <br>
+        <div class="-mx-4 flex flex-wrap justify-center">
+          <div class="w-full px-4 lg:w-7/12 xl:w-6/12">
+            <div class="mb-12 lg:mb-0 lg:mr-4">
+              <form>
+                <div class="-mx-4 flex flex-wrap">
+                  <div class="w-full px-4 md:w-1/2">
+                    <div class="mb-7">
+                      <input
+                        id="firstName"
+                        type="text"
+                        name="firstName"
+                        placeholder="Enter your first name"
+                        class="dark:border-dark-3 dark:text-dark-6 w-full border border-stroke bg-transparent px-5 py-[17px] text-body-color outline-none focus:border-primary dark:focus:border-primary"
+                      />
+                    </div>
+                  </div>
+                  <div class="w-full px-4 md:w-1/2">
+                    <div class="mb-7">
+                      <input
+                        id="lastName"
+                        type="text"
+                        name="lastName"
+                        placeholder="Enter your last Name"
+                        class="dark:border-dark-3 dark:text-dark-6 w-full border border-stroke bg-transparent px-5 py-[17px] text-body-color outline-none focus:border-primary dark:focus:border-primary"
+                      />
+                    </div>
+                  </div>
+                  <div class="w-full px-4 md:w-1/2">
+                    <div class="mb-7">
+                      <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        placeholder="Enter your Email"
+                        class="dark:border-dark-3 dark:text-dark-6 w-full border border-stroke bg-transparent px-5 py-[17px] text-body-color outline-none focus:border-primary dark:focus:border-primary"
+                      />
+                    </div>
+                  </div>
+                  <div class="w-full px-4 md:w-1/2">
+                    <div class="mb-7">
+                      <input
+                        id="number"
+                        type="text"
+                        name="number"
+                        placeholder="Enter your number"
+                        class="dark:border-dark-3 dark:text-dark-6 w-full border border-stroke bg-transparent px-5 py-[17px] text-body-color outline-none focus:border-primary dark:focus:border-primary"
+                      />
+                    </div>
+                  </div>
+                  <div class="w-full px-4">
+                    <div class="mb-7">
+                      <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Description"
+                        rows="6"
+                        class="dark:border-dark-3 dark:text-dark-6 w-full resize-none border border-stroke bg-transparent px-5 py-[17px] text-body-color outline-none focus:border-primary dark:focus:border-primary"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div class="w-full px-4">
+                    <div>
+                      <button
+                        type="submit"
+                        class="inline-flex items-center justify-center border border-transparent bg-primary px-7 py-3 text-base font-medium text-white hover:bg-opacity-90"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="w-full px-4 lg:w-5/12 xl:w-4/12">
+            <div class="map-container">
+              <object
+                style="border: 0; height: 450px; width: 100%"
+                data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.7887109309127!2d-77.44196278417968!3d38.95165507956235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDU3JzA2LjAiTiA3N8KwMjYnMjMuMiJX!5e0!3m2!1sen!2sbd!4v1545420879707"
+              ></object>
+            </div>
+          </div>
+        </div>
+
+
+        
+      </div>
+    </section>
+    <!-- ====== Form Section End -->
+
+    <!-- ====== Footer Section Start -->
+    <footer
+      class="relative z-10 bg-tg-bg pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]"
+    >
+      <div class="container mx-auto">
+        <div class="-mx-4 flex flex-wrap">
+          <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
+            <div class="mb-10 w-full">
+              <a
+                href="javascript:void(0)"
+                class="mb-6 inline-block max-w-[160px]"
+              >
+              </a>
+              <p class="dark:text-dark-6 mb-7 text-base text-body-color">
+                Lorem ipsum dolor amet consectetur adipiscing elit do eiusmod
+                tempor incididunt ut labore et dolore.
+              </p>
+              <div class="-mx-3 flex items-center">
+                <a
+                  href="javascript:void(0)"
+                  class="text-dark-7 px-3 hover:text-primary dark:text-white/40 dark:hover:text-primary"
+                >
+                  <svg
+                    width="10"
+                    height="18"
+                    viewBox="0 0 10 18"
+                    class="fill-current"
+                  >
+                    <path
+                      d="M9.00007 6.82105H7.50006H6.96434V6.27097V4.56571V4.01562H7.50006H8.62507C8.91971 4.01562 9.16078 3.79559 9.16078 3.46554V0.550085C9.16078 0.247538 8.9465 0 8.62507 0H6.66969C4.55361 0 3.08038 1.54024 3.08038 3.82309V6.21596V6.76605H2.54466H0.72322C0.348217 6.76605 0 7.06859 0 7.50866V9.48897C0 9.87402 0.294645 10.2316 0.72322 10.2316H2.49109H3.02681V10.7817V16.31C3.02681 16.6951 3.32145 17.0526 3.75003 17.0526H6.26791C6.42862 17.0526 6.56255 16.9701 6.66969 16.8601C6.77684 16.7501 6.8572 16.5576 6.8572 16.3925V10.8092V10.2591H7.4197H8.62507C8.97328 10.2591 9.24114 10.0391 9.29471 9.709V9.6815V9.65399L9.66972 7.7562C9.6965 7.56367 9.66972 7.34363 9.509 7.1236C9.45543 6.98608 9.21436 6.84856 9.00007 6.82105Z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  class="text-dark-7 px-3 hover:text-primary dark:text-white/40 dark:hover:text-primary"
+                >
+                  <svg
+                    width="19"
+                    height="15"
+                    viewBox="0 0 19 15"
+                    class="fill-current"
+                  >
+                    <path
+                      d="M16.2622 3.17878L17.33 1.93293C17.6391 1.59551 17.7234 1.33595 17.7515 1.20618C16.9085 1.67337 16.1217 1.82911 15.6159 1.82911H15.4192L15.3068 1.72528C14.6324 1.18022 13.7894 0.894714 12.8902 0.894714C10.9233 0.894714 9.37779 2.40012 9.37779 4.13913C9.37779 4.24295 9.37779 4.39868 9.40589 4.5025L9.49019 5.02161L8.90009 4.99565C5.30334 4.89183 2.35288 2.03675 1.87518 1.5436C1.08839 2.84136 1.53799 4.08722 2.01568 4.86587L2.97107 6.31937L1.45369 5.54071C1.48179 6.63084 1.93138 7.48736 2.80247 8.11029L3.56116 8.62939L2.80247 8.9149C3.28017 10.2386 4.34795 10.7837 5.13474 10.9913L6.17443 11.2509L5.19094 11.8738C3.61736 12.912 1.65039 12.8342 0.779297 12.7563C2.54957 13.8983 4.65705 14.1579 6.11823 14.1579C7.21412 14.1579 8.02901 14.0541 8.2257 13.9762C16.0936 12.2631 16.4589 5.77431 16.4589 4.47655V4.29486L16.6275 4.19104C17.5829 3.36047 17.9763 2.91923 18.2011 2.65967C18.1168 2.68563 18.0044 2.73754 17.892 2.7635L16.2622 3.17878Z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  class="text-dark-7 px-3 hover:text-primary dark:text-white/40 dark:hover:text-primary"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    class="fill-current"
+                  >
+                    <path
+                      d="M8.91688 12.4995C10.6918 12.4995 12.1306 11.0911 12.1306 9.35385C12.1306 7.61655 10.6918 6.20819 8.91688 6.20819C7.14197 6.20819 5.70312 7.61655 5.70312 9.35385C5.70312 11.0911 7.14197 12.4995 8.91688 12.4995Z"
+                    />
+                    <path
+                      d="M12.4078 0.947388H5.37075C2.57257 0.947388 0.300781 3.17104 0.300781 5.90993V12.7436C0.300781 15.5367 2.57257 17.7604 5.37075 17.7604H12.3524C15.2059 17.7604 17.4777 15.5367 17.4777 12.7978V5.90993C17.4777 3.17104 15.2059 0.947388 12.4078 0.947388ZM8.91696 13.4758C6.56206 13.4758 4.70584 11.6047 4.70584 9.35389C4.70584 7.10312 6.58976 5.23199 8.91696 5.23199C11.2165 5.23199 13.1004 7.10312 13.1004 9.35389C13.1004 11.6047 11.2442 13.4758 8.91696 13.4758ZM14.735 5.61164C14.4579 5.90993 14.0423 6.07264 13.5714 6.07264C13.1558 6.07264 12.7402 5.90993 12.4078 5.61164C12.103 5.31334 11.9368 4.9337 11.9368 4.47269C11.9368 4.01169 12.103 3.65916 12.4078 3.33375C12.7125 3.00834 13.1004 2.84563 13.5714 2.84563C13.9869 2.84563 14.4302 3.00834 14.735 3.30663C15.012 3.65916 15.2059 4.06593 15.2059 4.49981C15.1782 4.9337 15.012 5.31334 14.735 5.61164Z"
+                    />
+                    <path
+                      d="M13.5985 3.82184C13.2383 3.82184 12.9336 4.12013 12.9336 4.47266C12.9336 4.82519 13.2383 5.12349 13.5985 5.12349C13.9587 5.12349 14.2634 4.82519 14.2634 4.47266C14.2634 4.12013 13.9864 3.82184 13.5985 3.82184Z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  class="text-dark-7 px-3 hover:text-primary dark:text-white/40 dark:hover:text-primary"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    class="fill-current"
+                  >
+                    <path
+                      d="M16.7821 0.947388H1.84847C1.14272 0.947388 0.578125 1.49747 0.578125 2.18508V16.7623C0.578125 17.4224 1.14272 18 1.84847 18H16.7257C17.4314 18 17.996 17.4499 17.996 16.7623V2.15757C18.0525 1.49747 17.4879 0.947388 16.7821 0.947388ZM5.7442 15.4421H3.17528V7.32837H5.7442V15.4421ZM4.44563 6.2007C3.59873 6.2007 2.94944 5.5406 2.94944 4.74297C2.94944 3.94535 3.62696 3.28525 4.44563 3.28525C5.26429 3.28525 5.94181 3.94535 5.94181 4.74297C5.94181 5.5406 5.32075 6.2007 4.44563 6.2007ZM15.4835 15.4421H12.9146V11.509C12.9146 10.5739 12.8864 9.33618 11.5596 9.33618C10.2045 9.33618 10.0069 10.3813 10.0069 11.4265V15.4421H7.438V7.32837H9.95046V8.45605H9.9787C10.3457 7.79594 11.1644 7.13584 12.4347 7.13584C15.0601 7.13584 15.54 8.7861 15.54 11.0414V15.4421H15.4835Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ====== Footer Section End -->
+  <script defer src="bundle.js"></script>
+</body>
+
+</html>
